@@ -1,0 +1,20 @@
+{
+  "name": "travello",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Travello — React frontend + Express/MongoDB API",
+  "scripts": {
+    "dev": "node node_modules/concurrently/dist/bin/concurrently.js -n api,web -c cyan,magenta \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start:prod": "npm run build && node node_modules/cross-env/src/bin/cross-env.js NODE_ENV=production npm run start --prefix backend",
+    "start": "npm run start --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^7.0.3"
+  }
+}
